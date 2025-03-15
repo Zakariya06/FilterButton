@@ -20,7 +20,7 @@ const AddFilterButton: React.FC = () => {
             <div className="dropdown">
                 <button
                     className={`  mainBtn addFilterButton   ${isShow && "active"}`} 
-                    onClick={e => setIsShow(!isShow)}
+                    onClick={() => setIsShow(!isShow)}
                 >
                     <span className='addIconWrapper'>
                         <IoMdAdd size={12} />

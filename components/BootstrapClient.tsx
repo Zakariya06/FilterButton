@@ -1,12 +1,17 @@
-'use client' 
+'use client';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+
 const BootstrapClient = () => {
   useEffect(() => {
-  import('bootstrap/dist/js/bootstrap.bundle.min.js' as any);
-  }, [])
+    if (typeof window !== 'undefined') {
+      import('bootstrap/dist/js/bootstrap.bundle.min.js' as any)
+        .then(() => console.log('Bootstrap loaded'))
+        .catch((err) => console.error('Bootstrap failed to load:', err));
+    }
+  }, []);
 
-  return null
-}
+  return null;
+};
 
-export default BootstrapClient
+export default BootstrapClient;

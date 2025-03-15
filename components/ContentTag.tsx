@@ -4,8 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import ContentTagheader from "./ContentTagheader";
 import SelectOptionDropdown from "./SelectOptionDropdown";
 import IsDropdown from "./IsDropdown";
-import EqualDropdown from "./EqualDropdown";
-import AndOrButton from "./AndOrButton";
+import EqualDropdown from "./EqualDropdown"; 
 
 
 const ContentTag: React.FC<{ name: string; tag: string ; id: number }> = ({ name, tag, id, }) => {
