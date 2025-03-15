@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import "./globals.css";
+import Header from "@/components/Header"
+import { Container } from "react-bootstrap";
+import BootstrapClient from '@/components/BootstrapClient'
+import {FilterContextProvider} from "@/context/FilterContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const InterSans = Inter({
+  variable: "--font-inter-sans",
   subsets: ["latin"],
 });
 
@@ -23,9 +28,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en"  >
+      <body className={`${InterSans.variable} ${geistMono.variable}`}>
+        <FilterContextProvider>
+        <BootstrapClient />  {/* Bootstrap Client Component */}
+        <div className="filterLayoutPage">
+          <Container fluid>
+            <Header />
+            {children}
+          </Container> 
+        </div>
+        </ FilterContextProvider>  
       </body>
     </html>
   );
