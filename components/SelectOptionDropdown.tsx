@@ -9,10 +9,17 @@ interface SelectOptionDropdownProps {
     setIsOpen: (value: boolean) => void;
 }
 
+// Remove unused interface
+// interface DropdownOption {
+//   value: string;
+//   label: string;
+// }
+
 const SelectOptionDropdown: FC<SelectOptionDropdownProps> = ({ item, setSelectedValue, setIsOpen }) => {
     const [isActive, setIsActive] = useState<number>(1);
-    const [selectedItems, setSelectedItems] = useState<any>("");
-    const [applyValue, setApplyValue] = useState<any>([])
+    // Fix any types with proper type definitions
+    const [selectedItems, setSelectedItems] = useState<string[]>([]);
+    const [applyValue, setApplyValue] = useState<string[]>([]);
 
     // Add new function to handle select all
     const handleSelectAll = (checked: boolean) => {

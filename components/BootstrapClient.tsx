@@ -3,15 +3,18 @@
 import { useEffect } from 'react';
 
 const BootstrapClient = () => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      import('bootstrap/dist/js/bootstrap.bundle.min.js' as any)
-        .then(() => console.log('Bootstrap loaded'))
-        .catch((err) => console.error('Bootstrap failed to load:', err));
-    }
-  }, []);
+    useEffect(() => {
+        // Specify the proper type for the import
+        const loadBootstrap = (): Promise<any> => {
+            return import('bootstrap/dist/js/bootstrap.bundle.js' as string);
+        };
+        
+        if (typeof document !== 'undefined') {
+            loadBootstrap();
+        }
+    }, []);
 
-  return null;
+    return null;
 };
 
 export default BootstrapClient;
