@@ -7,15 +7,7 @@ import { useFilterContext } from "@/context/FilterContext";
 import ContentTag from "../ContentTag";
 import AndOrButton from "../AndOrButton";
 
-interface Filter {
-    id: number;
-    name: string;
-    value: string;
-    type: string;
-    options: string[];
-    selected: boolean;
-}
-
+ 
 const FilterButton: React.FC = () => {
     const filterContext = useFilterContext();
     const dropdownRef = useRef<HTMLDivElement>(null);

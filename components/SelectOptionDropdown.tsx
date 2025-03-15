@@ -27,15 +27,15 @@ const SelectOptionDropdown: FC<SelectOptionDropdownProps> = ({ item, setSelected
     };
 
     // Add function to handle individual item selection
-    const handleItemSelect = (label: string) => {
+    const handleItemSelect = (inputValue: string) => {
         setSelectedItems((prev: string[]) => {
-            if (prev.includes(label)) {
-                const lableValue = prev.filter((item: string) => item !== label)
+            if (prev.includes(inputValue)) {
+                const lableValue = prev.filter((item: string) => item !== inputValue)
                 setApplyValue(lableValue);
                 return lableValue;
             } else {
-                setApplyValue([...prev, label]);
-                return [...prev, label];
+                setApplyValue([...prev, inputValue]);
+                return [...prev, inputValue];
             }
         });
     };
