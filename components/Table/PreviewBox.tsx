@@ -2,26 +2,28 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
+interface PreviewData {
+    channel_id: string;
+    channel_name: string;
+    type: string;
+    country: string;
+    url_variants: string;
+    dt: string;
+    sampled: string;
+    hit_status: string;
+    join: string;
+    bf: string;
+    spend: string;
+    impressions: string;
+    clicks: string;
+    cpm: string | undefined;
+    cpa_per_click: string | null;
+    cpa_per_result: string | null;
+    results: string | null;
+}
+
 interface PreviewBoxProps {
-    data: {
-        channel_id: string;
-        channel_name: string;
-        type: string;
-        country: string;
-        url_variants: string;
-        dt: string;
-        sampled: string;
-        hit_status: string;
-        join: string;
-        bf: string;
-        spend: string;
-        impressions: string;
-        clicks: string;
-        cpm: string | undefined;  // Updated to match TableData
-        cpa_per_click: string | null;
-        cpa_per_result: string | null;
-        results: string | null;
-    };
+    data: PreviewData;
     onClose: () => void;
 }
 
@@ -72,7 +74,7 @@ const PreviewBox: React.FC<PreviewBoxProps> = ({ data, onClose }) => {
                                 <p><strong>Spend:</strong> {data.spend}</p>
                                 <p><strong>Impressions:</strong> {data.impressions}</p>
                                 <p><strong>Clicks:</strong> {data.clicks}</p>
-                                <p><strong>CPM:</strong> {data.cpm}</p>
+                                <p><strong>CPM:</strong> {data.cpm || 'N/A'}</p>
                                 <p><strong>CPA per Click:</strong> {data.cpa_per_click || 'N/A'}</p>
                                 <p><strong>CPA per Result:</strong> {data.cpa_per_result || 'N/A'}</p>
                                 <p><strong>Results:</strong> {data.results || 'N/A'}</p>
