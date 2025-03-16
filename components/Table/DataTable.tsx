@@ -19,7 +19,7 @@ interface TableData {
     spend: string;
     impressions: string;
     clicks: string;
-    cpm?: string;  // Made optional
+    cpm: string | undefined;  // Updated type
     cpa_per_click: string | null;
     cpa_per_result: string | null;
     results: string | null;
@@ -38,7 +38,7 @@ const DataTable: React.FC = () => {
         setTableData(tabledata as TableData[]);  // Added type assertion
     }, []);
 
-    const data: TableData[] = tabledata;
+    const data: TableData[] = tabledata as TableData[];
 
     const handleSort = (field: keyof TableData) => {
         if (field === sortField) {

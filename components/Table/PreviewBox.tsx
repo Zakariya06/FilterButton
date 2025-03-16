@@ -17,7 +17,7 @@ interface PreviewBoxProps {
         spend: string;
         impressions: string;
         clicks: string;
-        cpm: string;
+        cpm: string | undefined;  // Updated to match TableData
         cpa_per_click: string | null;
         cpa_per_result: string | null;
         results: string | null;
