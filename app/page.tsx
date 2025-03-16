@@ -1,5 +1,6 @@
 import FilterButton from "@/components/filterButton/FilterButton";  
 import { Container } from "react-bootstrap";
+import DataTable from "@/components/Table/DataTable";
 
 export default function Home() {
   return (
@@ -8,9 +9,10 @@ export default function Home() {
       <Container fluid="lg">
         <div className="filterContainer">
             <FilterButton />
-        </div>
+        </div>    
       </Container>
       </div>
+      <DataTable />
     </>
   );
 }

@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"  >
-      <body className={`${InterSans.variable} ${geistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning  >
+      <body suppressHydrationWarning  className={`${InterSans.variable} ${geistMono.variable}`}>
         <FilterContextProvider>
         <BootstrapClient />  {/* Bootstrap Client Component */}
         <div className="filterLayoutPage">
