@@ -3,27 +3,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import PreviewBox from './PreviewBox';
 import { BsArrowUpShort, BsArrowDownShort } from 'react-icons/bs';
-import tabledata from './tableData.json'
-
-interface TableData {
-    channel_id: string;
-    channel_name: string;
-    type: string;
-    country: string;
-    url_variants: string;
-    dt: string;
-    sampled: string;
-    hit_status: string;
-    join: string;
-    bf: string;
-    spend: string;
-    impressions: string;
-    clicks: string;
-    cpm: string | undefined;  // Updated type
-    cpa_per_click: string | null;
-    cpa_per_result: string | null;
-    results: string | null;
-}
+import tabledata from './tableData.json';
+import { TableData } from './types';
 
 const DataTable: React.FC = () => {
     const [mounted, setMounted] = useState(false);
