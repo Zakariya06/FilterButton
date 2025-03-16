@@ -19,10 +19,10 @@ interface TableData {
     spend: string;
     impressions: string;
     clicks: string;
-    cpm: string;
-    cpa_per_click: string;
-    cpa_per_result: string;
-    results: string;
+    cpm?: string;  // Made optional
+    cpa_per_click: string | null;
+    cpa_per_result: string | null;
+    results: string | null;
 }
 
 const DataTable: React.FC = () => {
@@ -35,7 +35,7 @@ const DataTable: React.FC = () => {
 
     useEffect(() => {
         setMounted(true);
-        setTableData(tabledata);
+        setTableData(tabledata as TableData[]);  // Added type assertion
     }, []);
 
     const data: TableData[] = tabledata;
